@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RichelleWEB</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      display: flex;
+      height: 100vh;
+      width: 100%;
+      justify-content: center;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 50px;
+    }
+    .box {
+      border-radius: 25px;
+      background: transparent;
+      backdrop-filter: blur(15px);
+      margin-bottom: 50px;
+      height: 400px;
+      display: flex;
+      width: 400px;
+      align-items: center;
+      justify-content: center;
+      border: 2px solid black;
+      box-shadow: rgb(102, 99, 99) 0px 20px 30px -10px;
+      flex-direction: column;
+      flex-wrap: wrap;
+    }
+    button {
+      height: 30px;
+      width: 200px;
+      border-radius: 15px;
+      position: absolute;
+      transition: transform 1.1 3s ease-in;
+    }
+
+    button:hover {
+      transform: scale(1.1);
+    }
+    button#login {
+      position: absolute;
+      top: 70%;
+    }
+    .box #btn1 {
+      top: 60%;
+      background: transparent;
+      color: black;
+      font-size: 1rem;
+      font-weight: bold;
+      text-shadow: 0 0 5px rgb(198, 4, 246);
+    }
+    .box #btn2 {
+      position: absolute;
+      top: 70%;
+
+      background: transparent;
+      color: black;
+      font-size: 1rem;
+      font-weight: bold;
+      text-shadow: 0 0 5px rgb(198, 4, 246);
+    }
+    input {
+      height: 30px;
+      width: 250px;
+      margin: 10px;
+      border-radius: 15px;
+      transition: transform 0.5s ease-in-out;
+      font-size: large;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      color: rgb(14, 14, 14);
+      background: transparent;
+    }
+    input::placeholder {
+      font-weight: bold;
+      font-size: large;
+      font-family: Georgia, "Times New Roman", Times, serif;
+      color: rgb(0, 0, 0);
+      text-shadow: 0 0 5px rgb(198, 4, 246);
+    }
+    input:hover {
+      transform: scale(1.1);
+    }
+
+    h1 {
+      text-shadow: 0 0 5px rgb(246, 4, 4);
+
+      margin-bottom: 50px;
+      display: flex;
+      align-items: center;
+      font-size: 1.5rem;
+      justify-content: center;
+    }
+    video {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+      position: fixed;
+      top: 0;
+      left: 0;
+    }
+    .hide {
+      display: none;
+    }
+    img {
+      position: absolute;
+      top: 10%;
+    }
+    #cssm {
+      border: 1px solid white;
+    }
+
+    .cssj {
+      display: none;
+    }
+
+    #f1 {
+      position: absolute;
+      left: 15%;
+    }
+    #f2 {
+      position: absolute;
+      transform: scaleX(-1);
+      left: 50%;
+    }
+    #f3 {
+      position: absolute;
+      left: 21%;
+    }
+    #f4 {
+      position: absolute;
+      left: 45%;
+      transform: scaleX(-1);
+    }
+    #f5 {
+      position: absolute;
+      top: 55%;
+      left: 34%;
+      height: 100px;
+      width: 150px;
+    }
+    #bet {
+      position: fixed;
+      top: 80%;
+      left: 10%;
+      text-shadow: 0 0 5px rgb(198, 4, 246);
+      font-size: 1.5rem;
+      font-size: bold;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    #next {
+      width: 100px;
+      position: absolute;
+      top: 92%;
+      right: 5px;
+      background: transparent;
+      color: black;
+      font-size: 1rem;
+      font-weight: bold;
+      text-shadow: 0 0 5px rgb(198, 4, 246);
+    }
+    #lsm {
+      position: absolute;
+      top: 22%;
+      font-size: 1.1rem;
+      margin: 10px;
+      text-shadow: 0 0 5px rgb(198, 4, 246);
+      font-weight: bold;
+    }
+    #imglsm1 {
+      height: 100px;
+      width: 150px;
+      position: absolute;
+      top: 0;
+      left: 0;
+    }
+    #imglsm2 {
+      height: 100px;
+      width: 100px;
+      position: absolute;
+      right: 0;
+      top: 75%;
+    }
+    #mahalimg {
+      height: 100px;
+      width: 100px;
+      position: absolute;
+      right: 2px;
+      border-radius: 34% 66% 32% 68% / 73% 35% 65% 27%;
+      box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+        rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+        rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+      top: 0;
+    }
+    #betlsm {
+      position: absolute;
+      top: 84%;
+      width: 100px;
+      left: 37%;
+      background: transparent;
+      color: black;
+      font-size: 1rem;
+      font-weight: bold;
+      text-shadow: 0 0 5px rgb(198, 4, 246);
+    }
+    #hindi {
+      position: absolute;
+      top: 92%;
+      width: 100px;
+      left: 37%;
+      background: transparent;
+      color: black;
+      font-size: 1rem;
+      font-weight: bold;
+      text-shadow: 0 0 5px rgb(198, 4, 246);
+    }
+    #login {
+      background: transparent;
+      color: black;
+      font-size: 1rem;
+      font-weight: bold;
+      text-shadow: 0 0 5px rgb(198, 4, 246);
+    }
+    .show {
+      display: block;
+    }
+  </style>
+  <body>
+    <video
+      src="codesnapPic/mylivewallpapers-com-College-Couple-4K.mp4"
+      autoplay
+      loop
+      playinline
+      muted
+    ></video>
+    <div id="box1" class="box">
+      <img
+        src="https://media.tenor.com/0tkCPVxDt1kAAAAi/dudu.gif"
+        height="100px"
+        width=" 100px"
+        alt=""
+      />
+      <p id="cssm" class="cssj">please enter a answer</p>
+      <input type="text" placeholder="Most beautiful girl" id="hubby" />
+      <input type="password" placeholder="password" id="pass" />
+      <button id="login">Submit</button>
+      <p id="ily">i love you mahal ko</p>
+      <h1>will you be my valentine?</h1>
+
+      <button id="btn1">yes</button>
+      <button id="btn2">no</button>
+    </div>
+    <div id="box2" class="box">
+      <img
+        id="f1"
+        src="https://media.tenor.com/YfqSiajOv-QAAAAj/flowers-flower.gif"
+        alt=""
+      />
+      <img
+        id="f2"
+        src="https://media.tenor.com/YfqSiajOv-QAAAAj/flowers-flower.gif"
+        alt=""
+      />
+      <img
+        id="f3"
+        src="https://media.tenor.com/YfqSiajOv-QAAAAj/flowers-flower.gif"
+        alt=""
+      />
+      <img
+        id="f4"
+        src="https://media.tenor.com/YfqSiajOv-QAAAAj/flowers-flower.gif"
+        alt=""
+      />
+      <img
+        id="f5"
+        src="https://media.tenor.com/QaLVINLFdOIAAAAj/flower-flowers.gif"
+        alt=""
+      />
+      <p id="bet">FLOWERS FOR YOU MAHAL</p>
+      <button id="next">Next</button>
+    </div>
+    <div id="box3" class="box">
+      <img
+        id="imglsm1"
+        src="https://media.tenor.com/1iQ0Bqc02KsAAAAj/bubu-dudu-love.gif"
+        alt=""
+      />
+      <img
+        id="imglsm2"
+        src="https://media.tenor.com/IGc3S86eosAAAAAj/long-livethe-blob-hearts.gif"
+        alt=""
+      />
+      <img id="mahalimg" src="codesnapPic/mahalValen.jpg" alt="" />
+      <p id="lsm">
+        i love you mahal happy valentines day po di lang siguro ni nako taason
+        kay gamay rang box pero i love you always mahal thankyou sa tanan sa pag
+        appreciete nimo sa ako gi buhat nya promise mag pakapapakabait pako lalo
+        sayo under na kong under basta ikaw AHAHAHAHA napaka ganda mo always
+        mahal ko tagvis nani AHAHAHAH pero sana mahal maging masaya ka sa date
+        po happy valentines day wifeyi love you po always i love you so much i
+        love you moreeeee
+      </p>
+      <button id="betlsm">bet</button>
+      <button id="hindi">hindi</button>
+    </div>
+  </body>
+  <script>
+    let lgn = document.querySelector("#login");
+    let box = document.querySelector("#box");
+    let body = document.querySelector("body");
+    let p = document.querySelector("#ily");
+    let img = document.querySelector("img");
+    let h1 = document.querySelector("h1");
+    let hubby = document.getElementById("hubby");
+    let pass = document.getElementById("pass");
+    let cssm = document.querySelector("#cssm");
+    let box2 = document.querySelector("#box2");
+    let box1 = document.querySelector("#box1");
+    let box3 = document.querySelector("#box3");
+    let next = document.querySelector("#next");
+    let betlsm = document.querySelector("#betlsm");
+    let hindi = document.querySelector("#hindi");
+
+    p.style.display = "none";
+    h1.style.display = "none";
+    btn1.style.display = "none";
+    btn2.style.display = "none";
+    box2.style.display = "none";
+    box3.style.display = "none";
+    hindi.addEventListener("click", hindipindot);
+    hindi.addEventListener("mouseover", hindipindot);
+    function hindipindot() {
+      let lr = ["10%", "60%"];
+      let lrindex = parseInt(Math.random() * lr.length);
+      hindi.style.left = lr[lrindex];
+      setTimeout(function () {
+        hindi.style.left = "";
+      }, 1000);
+    }
+
+    lgn.addEventListener("click", loginmahal);
+    function loginmahal() {
+      if (
+        hubby.value === "Richelle" ||
+        (hubby.value === "richelle" && pass.value === "112820")
+      ) {
+        console.log("success");
+        hubby.style.display = "none";
+        pass.style.display = "none";
+        lgn.style.display = "none";
+        img.src =
+          "https://media.tenor.com/JYS6f27lUiYAAAAj/peach-goma-love-heart-dance.gif";
+        shownext();
+      } else if (hubby.value === "" && pass.value === "") {
+        cssm.classList.add("show");
+        setTimeout(function () {
+          cssm.classList.remove("show");
+        }, 4000);
+      } else {
+        alert("grabe sure ara mahal tarronga daw");
+      }
+    }
+    function shownext() {
+      let btn1 = document.querySelector("#btn1");
+      let btn2 = document.querySelector("#btn2");
+      p.style.display = "block";
+      h1.style.display = "block";
+      btn1.style.display = "block";
+      btn2.style.display = "block";
+
+      btn1.addEventListener("click", yes);
+      btn2.addEventListener("mouseover", no);
+      btn2.addEventListener("click", no);
+      let height1 = 30;
+      let height2 = 30;
+      function yes() {
+        box2.style.display = "block";
+        box1.style.display = "none";
+      }
+      function no() {
+        let rand = ["-100px", "300px"];
+        let indexr = parseInt(Math.random() * rand.length);
+        btn2.style.position = "absolute";
+        btn2.style.left = rand[indexr];
+
+        setTimeout(function () {
+          btn2.style.left = "";
+        }, 1000);
+      }
+    }
+    next.addEventListener("click", nextpage);
+    function nextpage() {
+      box3.style.display = "block";
+      box2.style.display = "none";
+    }
+
+    // let btn1 = document.querySelector("btn1");
+    // let btn2 = document.querySelector("btn2");
+    // btn1.addEventListener("click", yes);
+    // btn2.addEventListener("click", no);
+
+    // function yes() {
+    //   h1.innerHTML = "THANKYOU MAHAL KO";
+
+    // }
+    // function no(){
+    //   btn1.style
+    // }
+  </script>
+</html>
